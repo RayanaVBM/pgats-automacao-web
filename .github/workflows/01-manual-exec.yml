@@ -17,9 +17,8 @@ jobs:
       - name: Instalando Yarn
         run: npm install -g yarn
  
-
       - name: Testes E2E (end-to-end)
-        run: yarn run e2e
+        run: yarn run test
 
 
 
