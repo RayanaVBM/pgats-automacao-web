@@ -21,7 +21,7 @@ jobs:
         run: yarn add cypress
  
       - name: Testes E2E (end-to-end)
-        run: npx cypress run
+        run: yarn run test
         env: 
           CYPRESS_BASE_URL: 'https://automationexercise.com/'  
 
