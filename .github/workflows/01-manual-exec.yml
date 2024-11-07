@@ -18,7 +18,7 @@ jobs:
         run: npm install -g yarn
 
       - name: Instalando Cypress
-        run: yarn add cypress
+        run: yarn add cypress --dev
  
       - name: Testes E2E (end-to-end)
         run: yarn run test
