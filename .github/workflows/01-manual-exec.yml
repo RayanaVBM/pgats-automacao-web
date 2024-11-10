@@ -28,7 +28,7 @@ jobs:
       - uses: actions/upload-artifact@v4
         with:
           name: relatorio-de-testes
-          path: ./results    
+          path: PGATS/cypress/reports/html    
 
 
 
