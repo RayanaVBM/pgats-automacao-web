@@ -19,6 +19,9 @@ jobs:
 
       - name: Instalando Cypress
         run: yarn add cypress --dev
+      
+      - name: Instalando cypress-mochawesome-reporter
+        run: yarn add cypress-mochawesome-reporter --dev
  
       - name: Testes E2E (end-to-end)
         run: yarn run test
