@@ -1,0 +1,38 @@
+name: 'Execução Manual'
+
+on: 
+  workflow_dispatch:
+
+
+jobs:
+  e2e-tests:
+    runs-on: ['ubuntu-latest']
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: lts/*
+
+      - name: Instalando Yarn
+        run: npm install -g yarn
+
+      - name: Instalando Cypress
+        run: yarn add cypress --dev
+      
+      - name: Instalando cypress-mochawesome-reporter
+        run: yarn add cypress-mochawesome-reporter --dev
+ 
+      - name: Testes E2E (end-to-end)
+        run: yarn run test
+        env: 
+          CYPRESS_BASE_URL: 'https://automationexercise.com/' 
+      
+      - uses: actions/upload-artifact@v4
+        with:
+          name: relatorio-de-testes
+          path: cypress/reports    
+
+
+
+
